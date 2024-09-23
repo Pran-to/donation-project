@@ -21,6 +21,37 @@ function doToggle(a , b , c , d){
  document.getElementById(d).classList.add('hidden');
 }
 
+// donation all main function 
+function donateFun(title ,donationBtn,donationIn,donationAm){
+  document.getElementById(donationBtn).addEventListener('click',(e)=>{
+      e.preventDefault();
+      
+              if (isNaN(inputFiled(donationIn)) || inputFiled(donationIn) <= 0) {
+                  alert("Invalid donation amount.");
+                  return;
+              }
+             else if (inputFiled(donationIn) > textFiled('main-balance')) {
+                  alert("Insufficient balance.");
+                  return;
+              }
+              else {
+                  const donationTotal1 = textFiled(donationAm) + inputFiled(donationIn)  ;
+                  const mainBalance = textFiled('main-balance') - inputFiled(donationIn) ;
+                  document.getElementById(donationAm).innerText = donationTotal1 ;
+                  document.getElementById('main-balance').innerText = mainBalance ;
+                  // history update section 
+                   historyUpdate (title,donationIn);
+
+                   document.getElementById(donationIn).value = '';
+  
+                  //  modal part 
+              }
+  
+  
+       
+  })
+}
+
 // input filed get value function  
 
 function inputFiled (id) {

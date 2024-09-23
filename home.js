@@ -10,29 +10,9 @@ document.getElementById('history-btn').addEventListener('click', ()=>{
 
 
 // Donation functionality 
-document.getElementById('donation-btn1').addEventListener('click',(e)=>{
-    e.preventDefault();
-    
-            if (isNaN(inputFiled('donation-input-1')) || inputFiled('donation-input-1') <= 0) {
-                alert("Invalid donation amount.");
-                return;
-            }
-           else if (inputFiled('donation-input-1') > textFiled('main-balance')) {
-                alert("Insufficient balance.");
-                return;
-            }
-            else {
-                const donationTotal1 = textFiled('donationAmount-1') + inputFiled('donation-input-1')  ;
-                const mainBalance = textFiled('main-balance') - inputFiled('donation-input-1') ;
-                document.getElementById('donationAmount-1').innerText = donationTotal1 ;
-                document.getElementById('main-balance').innerText = mainBalance ;
-
-                // history update section 
-                 historyUpdate ('title-1','donation-input-1');
-
-                //  modal part 
-            }
-
-
-     
-})
+// card 1 
+donateFun('title-1','donation-btn1','donation-input-1','donationAmount-1')
+//  card 2
+donateFun('title-2','donation-btn2','donation-input-2','donationAmount-2')
+// card 3
+donateFun('title-3','donation-btn3','donation-input-3','donationAmount-3')
