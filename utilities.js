@@ -7,3 +7,36 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("backdrop-blur-md", "bg-slate-800/10");
   }
 });
+
+
+// toggle button function 
+
+
+function doToggle(a , b , c , d){
+ document.getElementById(a).classList.add('bg-blue-500');
+ document.getElementById(a).classList.remove('bg-gray-500');
+ document.getElementById(b).classList.add('bg-gray-500');
+ document.getElementById(b).classList.remove('bg-blue-500');
+ document.getElementById(c).classList.remove('hidden');
+ document.getElementById(d).classList.add('hidden');
+}
+
+// input filed get value function  
+
+function inputFiled (id) {
+  const inputFiled = document.getElementById(id).value ;
+    const input = parseFloat(inputFiled);
+    return input ;
+}
+// text filed get value function  
+
+function textFiled (id) {
+  const textFiled = document.getElementById(id).innerText ;
+    const text = parseFloat(textFiled);
+    return text ;
+}
+
+// create element function 
+function createEle (){
+
+}
