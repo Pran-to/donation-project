@@ -12,8 +12,6 @@ document.getElementById('history-btn').addEventListener('click', ()=>{
 // Donation functionality 
 document.getElementById('donation-btn1').addEventListener('click',(e)=>{
     e.preventDefault();
-
- 
     
             if (isNaN(inputFiled('donation-input-1')) || inputFiled('donation-input-1') <= 0) {
                 alert("Invalid donation amount.");
@@ -28,7 +26,11 @@ document.getElementById('donation-btn1').addEventListener('click',(e)=>{
                 const mainBalance = textFiled('main-balance') - inputFiled('donation-input-1') ;
                 document.getElementById('donationAmount-1').innerText = donationTotal1 ;
                 document.getElementById('main-balance').innerText = mainBalance ;
-                console.log(donationTotal1 , mainBalance)
+
+                // history update section 
+                 historyUpdate ('title-1','donation-input-1');
+
+                //  modal part 
             }
 
 

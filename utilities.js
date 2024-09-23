@@ -36,7 +36,16 @@ function textFiled (id) {
     return text ;
 }
 
-// create element function 
-function createEle (){
+// create element and history update function 
+function historyUpdate (titles,donationInput){
+  let history = document.getElementById('history-section');
+  const title = document.getElementById(titles).innerText ;
+  const newDiv = document.createElement('div');
+    newDiv.innerHTML = `
+    <div class=" rounded-md drop-shadow-md space-y-7 bg-white p-7 border "> <p class = "font-bold "> ${ inputFiled(donationInput)} Taka is  ${title} </p> 
+    <p> ${new Date().toLocaleString()} </p>
+    </div>
+    `
+    history.appendChild(newDiv);
 
-}
+ }
